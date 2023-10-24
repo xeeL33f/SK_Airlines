@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SK_Airlines_App.FlightBookingPage"
+             Title="FlightBookingPage">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle3" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <StackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Placeholder-Placeholder" FontSize="20" Padding="10"/>
+            <Label Text="Book Flight" FontSize="20" Padding="80,10,0,0" FontAttributes="Bold" TextColor="#149bcc"/>
+            <Label Text="Guest Details" FontSize="20" Padding="40,10,0,0"/>
+            <Label Text="Add-ons" FontSize="20" Padding="40,10,0,0"/>
+            <Label Text="Payment" FontSize="20" Padding="40,10,0,0"/>
+            <Label Text="Confirmation" FontSize="20" Padding="40,10,0,0"/>
+        </HorizontalStackLayout>
+        <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
+            <BoxView HeightRequest="6" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+
+        <Label Text="Select your Departing Flight" Padding="10" FontSize="25"/>
+
+        <StackLayout Padding="15">
+            <Grid RowDefinitions="*,*,*,*" VerticalOptions="Center" RowSpacing="10">
+                <Frame Grid.Row="0" WidthRequest="600" HeightRequest="100" BorderColor="Black" BackgroundColor="White">
+                    <HorizontalStackLayout>
+                        <Label Text="8:45 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label FontFamily="Icon" Text=" &#xE800;" TextColor="DeepSkyBlue" Padding="3"/>
+                        <Label Text="  10:20 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="    1h 40m" TextColor="Black" />
+                        <Label Text="    5J 571" TextColor="Black" />
+                        <Label Text="PHP 4,717.72" TextColor="Black" Padding="180,0,0,0" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedFrame"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Grid.Row="1" WidthRequest="600" HeightRequest="100" BorderColor="Black" BackgroundColor="White">
+                    <HorizontalStackLayout>
+                        <Label Text="8:45 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label FontFamily="Icon" Text=" &#xE800;" TextColor="DeepSkyBlue" Padding="3"/>
+                        <Label Text="  10:20 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="    1h 40m" TextColor="Black"/>
+                        <Label Text="    5J 571" TextColor="Black"/>
+                        <Label Text="PHP 4,717.72" TextColor="Black" Padding="180,0,0,0" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedFrame"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Grid.Row="2" WidthRequest="600" HeightRequest="100" BorderColor="Black" BackgroundColor="White">
+                    <HorizontalStackLayout>
+                        <Label Text="8:45 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label FontFamily="Icon" Text=" &#xE800;" TextColor="DeepSkyBlue" Padding="3"/>
+                        <Label Text="  10:20 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="    1h 40m" TextColor="Black"/>
+                        <Label Text="    5J 571" TextColor="Black"/>
+                        <Label Text="PHP 4,717.72" TextColor="Black" Padding="180,0,0,0" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedFrame"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Grid.Row="3" WidthRequest="600" HeightRequest="100" BorderColor="Black" BackgroundColor="White">
+                    <HorizontalStackLayout>
+                        <Label Text="8:45 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label FontFamily="Icon" Text=" &#xE800;" TextColor="DeepSkyBlue" Padding="3"/>
+                        <Label Text="  10:20 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="    1h 40m" TextColor="Black"/>
+                        <Label Text="    5J 571" TextColor="Black"/>
+                        <Label Text="PHP 4,717.72" TextColor="Black" Padding="180,0,0,0" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedFrame"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

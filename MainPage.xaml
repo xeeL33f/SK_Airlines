@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SK_Airlines_App.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="110" />
+                <Setter Property="FontFamily" Value="FrankRuhlLibreBold"/>
+            </Style>
+            <Style x:Key="labelStyle2" TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="FrankRuhlLibreBold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid RowDefinitions="*, *, *, *" RowSpacing="50">
+            <Image Grid.Row="0" Source="plane_hdd.jpg" HeightRequest="550" Aspect="Fill" ZIndex="0"/>
+            <Label Text="SK Airlines" HorizontalOptions="Start"  Margin="10,0,0,0" FontSize="Header" FontFamily="FrankRuhlLibreBold"/>
+            <Label Text="Login" HorizontalOptions="End" Margin="0,10,40,0" FontSize="15">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Anywhere at Anytime" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,0,0,0" Style="{StaticResource labelStyle}"/>
+
+            <!-- **Box for Entries** -->
+            <BoxView Color="White" VerticalOptions="End" HeightRequest="100" WidthRequest="680" ZIndex="1" Opacity="0.3" CornerRadius="10"/>
+
+            <!-- **Entry for Origin** -->
+            <Entry x:Name="originEntry" 
+                   Placeholder="Origin" 
+                   VerticalOptions="End" 
+                   HorizontalOptions="Center" 
+                   Margin="0,0,460,40" 
+                   BackgroundColor="White" 
+                   WidthRequest="200" 
+                   TextColor="Black" 
+                   ZIndex="1"/>
+
+            <!-- **Swap Favicon** -->
+            <Image Source="swap_32size.png" WidthRequest="20" HeightRequest="20" Margin="0,425,245,0" ZIndex="1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImageTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!-- **Entry for Destination** -->
+            <Entry x:Name="destEntry" 
+                   Placeholder="Destination" 
+                   VerticalOptions="End" 
+                   HorizontalOptions="Center" Margin="0,0,30,40" 
+                   BackgroundColor="White" 
+                   WidthRequest="200" 
+                   TextColor="Black" 
+                   ZIndex="1"/>
+
+            <DatePicker VerticalOptions="End" HorizontalOptions="Center" Margin="290,0,0,40" ZIndex="1"/>
+
+            <!-- **Search Flight Button** -->
+            <Button HeightRequest="44" 
+                    WidthRequest="100" 
+                    VerticalOptions="End" 
+                    HorizontalOptions="Center"
+                    Margin="535,0,0,40" 
+                    ZIndex="1" 
+                    Text="Search Flight" 
+                    FontSize="12" 
+                    BackgroundColor="#149bcc"/>
+
+            <Picker x:Name="picker1" VerticalOptions="End" HorizontalOptions="Center" Margin="0,0,500,5" ZIndex="1" MinimumHeightRequest="10">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>One Way</x:String>
+                        <x:String>Round Trip</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Grid ColumnDefinitions="*,*,*,*,*" Grid.Row="1" HorizontalOptions="Center" ColumnSpacing="50">
+                <Image Source="baguio.jpg" Grid.Column="0"/>
+                <Image Source="cebu.jpg" Grid.Column="1" HeightRequest="240" Aspect="AspectFit"/>
+                <Image Source="siargao.jpg" Grid.Column="2"/>
+                <Image Source="bohol.jpg" Grid.Column="3"/>
+                
+                <Label x:Name="placeSample1"  Text="Baguio" Grid.Column="0" Style="{StaticResource labelStyle2}">
+                    <Label.GestureRecognizers>
+                        <PointerGestureRecognizer PointerEntered="TapGesureRecognizer_Tapped_ForScaleAnim" 
+                                                  PointerExited="TapGesureRecognizer_Exited_ForScaleAnim"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                
+                <Label x:Name="placeSample2" Text="Cebu" Grid.Column="1" Style="{StaticResource labelStyle2}">
+                    <Label.GestureRecognizers>
+                        <PointerGestureRecognizer PointerEntered="TapGesureRecognizer_Tapped_ForScaleAnim" 
+                                                  PointerExited="TapGesureRecognizer_Exited_ForScaleAnim"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label x:Name="placeSample3" Text="Siargao" Grid.Column="2" Style="{StaticResource labelStyle2}">
+                    <Label.GestureRecognizers>
+                        <PointerGestureRecognizer PointerEntered="TapGesureRecognizer_Tapped_ForScaleAnim" 
+                                                  PointerExited="TapGesureRecognizer_Exited_ForScaleAnim"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label x:Name="placeSample4" Text="Bohol" Grid.Column="3" Style="{StaticResource labelStyle2}">
+                    <Label.GestureRecognizers>
+                        <PointerGestureRecognizer PointerEntered="TapGesureRecognizer_Tapped_ForScaleAnim" 
+                                                  PointerExited="TapGesureRecognizer_Exited_ForScaleAnim"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*" Grid.Row="2" HorizontalOptions="Center" ColumnSpacing="20">
+                <Label FontFamily="FrankRuhlLibreBold" 
+                       FontSize="25" 
+                       Text="Why Everyone Flies" 
+                       FontAttributes="Bold" 
+                       Grid.Column="0" 
+                       TextColor="#211f19"/>
+                
+                <Label FontSize="25" 
+                       Text="SK Airlines operates the widest network in the Philippines, offering flights to Manila, Cebu, Davao, Iloilo, Clark, and more! With flexible bookings, low fares, and global best safety practices, the airline continues to boost travel confidence for every Juan by providing connectivity to key cities in Asia, Australia, and the Middle East." 
+                       Margin="0,30,0,0"/>
+                
+                <Image Source="traveller.jpg" Grid.Column="1" HeightRequest="250"/>
+                
+            </Grid>
+
+            <Button Text="Book A Flight" Grid.Row="3" WidthRequest="400" BackgroundColor="#149bcc" FontSize="25" Clicked="OnButtonClicked"/>
+            
+        </Grid>
+
+
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SK_Airlines_App.UserRegisterPage"
+             Title="UserRegisterPage">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Grid RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,*"  ColumnSpacing="40">
+
+            <Label Text="User Registration" FontSize="20" Margin="10" />
+
+            <Label Text=" First Name"  Grid.Row="1" Grid.Column="0" />
+            <Entry x:Name="firstName" Margin="0,0,0,10"  Grid.Row="1" Grid.Column="0" HeightRequest="60"/>
+
+            <Label Text=" Last Name"  Grid.Row="2" Grid.Column="0" />
+            <Entry x:Name="lastName" Margin="0,0,0,10"  Grid.Row="2" Grid.Column="0" HeightRequest="60"/>
+
+            <Label Text=" Email"  Grid.Row="3" Grid.Column="0"/>
+            <Entry x:Name="emailAdd" Margin="0,0,0,15"  Grid.Row="3" Grid.Column="0" HeightRequest="60"/>
+
+            <Label Text=" Password"  Grid.Row="4" Grid.Column="0"/>
+            <Entry x:Name="password" Margin="0,0,0,10"  Grid.Row="4" Grid.Column="0" HeightRequest="60"/>
+
+            <Label Text=" Phone Number" Grid.Row="1" Grid.Column="1"/>
+            <Entry x:Name="phoneNum" Margin="0,0,0,10" Grid.Row="1" Grid.Column="1" HeightRequest="60" WidthRequest="200"/>
+
+            <Label Text=" Nickname" Grid.Row="2" Grid.Column="1"/>
+            <Entry x:Name="nickName" Margin="0,0,0,10" Grid.Row="2" Grid.Column="1" HeightRequest="60" WidthRequest="200"/>
+
+            <Picker x:Name="genderPicker" Margin="0,0,0,10"
+                Title="Gender"
+                Grid.Row="3" Grid.Column="1" WidthRequest="200">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+        </Grid>
+
+        <Button Text="Register" BackgroundColor="#149bcc" Clicked="OnRegisterClicked"/>
+        <Label x:Name="labelResult" HorizontalTextAlignment="Center" TextColor="Red"/>
+
+    </StackLayout>
+</ContentPage>
