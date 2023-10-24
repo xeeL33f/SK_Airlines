@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# SK_Airlines
+SK_Airlines
 A non-proprietary Airline Desktop Application. 
 =======
 # Project_SK
@@ -17,8 +15,4 @@ Tasks/Features to Implement:
 8. Search flight
 9. Book Ticket
 10. Itinerary
->>>>>>> 2e72104 (main code)
-=======
-# SK_Airlines
-A non-proprietary Airline Desktop Application. 
->>>>>>> c759974fae67e34e8a72308bcba07c822bd478b2
+
