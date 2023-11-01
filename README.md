@@ -11,5 +11,5 @@ Tasks/Features to Implement:
 7. User Login
 8. Search flight
 9. Book Ticket
-10. Itinerary
+10. Print Itinerary
 
