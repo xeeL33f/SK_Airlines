@@ -19,10 +19,19 @@ namespace SK_Airlines_App
             destEntry.Text = originValue;
         }
 
-        private async void OnButtonClicked(object sender, EventArgs e)
+        private async void OnSearchFlightButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BookingForm());
- 
+            //System should confirm if the Source destination and the Final Destination is in the Admin's File of Route and should be present
+            //else we put a temporary variable that these destination exist...
+
+            var sourceDestination = "Cebu";
+            var finalDestination = "Manila";
+
+            if(sourceDestination==originEntry.Text && finalDestination==destEntry.Text)
+            {
+                await Navigation.PushAsync(new BookingForm());
+            }
+
         }
 
         private async void OnLabelTapped(object sender, TappedEventArgs e)
