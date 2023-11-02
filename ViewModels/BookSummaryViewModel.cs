@@ -31,7 +31,7 @@ namespace SK_Airlines_App.ViewModel
         public void InitializeValues()
         {
             BookingFlight BookingFlightObj = new BookingFlight(BookingCollection[0].Origin, BookingCollection[0].Destination, BookingCollection[0].NoAdults, BookingCollection[0].NoChildren, BookingCollection[0].NoInfants,
-                        BookingCollection[0].FlightType, BookingCollection[0].DepartureDate, BookingCollection[0].ReturnDate, BookingCollection[0].PromoCode, 0);
+                        BookingCollection[0].FlightType, BookingCollection[0].DepartureDate, BookingCollection[0].ReturnDate, BookingCollection[0].PromoCode, "0");
 
         }
 
