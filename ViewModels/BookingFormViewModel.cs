@@ -40,6 +40,17 @@ namespace SK_Airlines_App.ViewModel
             AddToFile();
         }*/
 
+        public void GetInfo(string origin, string destination, string adultQuantity, string childrenQuantity, string infantQuantity,
+            string flightType,string departureDate,string returnDate,string promoCode,string travelClass)
+        {
+            BookingFlight BookingInfo = new BookingFlight(origin, destination, adultQuantity, childrenQuantity, infantQuantity,
+                flightType, departureDate, returnDate, promoCode, travelClass);
+
+            BookingCollections.Add(BookingInfo);
+
+            AddToFile();
+        }
+
         public void AddToFile()
         {
             string filePath = Path.Combine(maindir, $"FlightBooking.json");

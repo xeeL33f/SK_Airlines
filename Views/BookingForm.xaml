@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SK_Airlines_App.BookingForm"
-             Title="BookingForm">
+<ContentPage
+    x:Class="SK_Airlines_App.BookingForm"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="BookingForm">
     <StackLayout>
-        <Label Text="Hi, where do you want to travel?" Margin="20,25,0,0" FontSize="30"/>
-        
-        <!-- **Dropbox Control** -->
-        <Picker x:Name="picker2" VerticalOptions="End" HorizontalOptions="Start" MinimumHeightRequest="10" Margin="20,0,0,0" >
+        <Label
+            Margin="20,25,0,0"
+            FontSize="30"
+            Text="Hi, where do you want to travel?" />
+
+        <!--  **Dropbox Control**  -->
+        <Picker
+            x:Name="flightTypepck"
+            Margin="20,0,0,0"
+            HorizontalOptions="Start"
+            MinimumHeightRequest="10"
+            VerticalOptions="End">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>One Way</x:String>
@@ -15,26 +24,77 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        
-        <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*"  VerticalOptions="Center" RowSpacing="30" Margin="0,150,0,0" >
-            <Entry x:Name="origin" Placeholder="Select Origin" Grid.Column="0"  WidthRequest="200" />   
-            <Entry x:Name="dest" Placeholder="Select Destination" Grid.Column="0"  WidthRequest="200" Margin="400,0,0,0" />
-            
-            <!-- **Departure Date** -->
-            <DatePicker Grid.Column="1" />
-            <!-- **Return Date** -->
-            <DatePicker Grid.Column="1" Margin="110,0,0,0"/>
-            
-            <!-- **Quantities** -->
-            <Entry x:Name="adultNum" Keyboard="Numeric"  Placeholder="Adult Quantity" Grid.Column="0" Grid.Row="1" WidthRequest="200" />
-            <Entry x:Name="childNum" Keyboard="Numeric" Placeholder="Children Quantity" Grid.Column="0" Grid.Row="1" WidthRequest="200" Margin="400,0,0,0"/>
-            <Entry x:Name="infantNum" Keyboard="Numeric" Placeholder="Infant Quantity" Grid.Column="1" Grid.Row="1" WidthRequest="200" Margin="0,0,625,0"/>
-            <Entry x:Name="promoCode" Placeholder="Promo Code (optional)" Grid.Column="1" Grid.Row="1" WidthRequest="200" Margin="0,0,185,0"/>
-            
-            <!-- **Button for Search Flight**-->
-            <Button Text="Search Flight"  Grid.Column="1" Grid.Row="2" WidthRequest="150" Margin="0,0,135,0" BackgroundColor="#149bcc" FontSize="10" Clicked="OnButtonClicked"/>
+
+        <Grid
+            Margin="0,150,0,0"
+            ColumnDefinitions="*,*"
+            RowDefinitions="*,*,*"
+            RowSpacing="30"
+            VerticalOptions="Center">
+            <Entry
+                x:Name="origin"
+                Grid.Column="0"
+                Placeholder="Select Origin"
+                WidthRequest="200" />
+            <Entry
+                x:Name="dest"
+                Grid.Column="0"
+                Margin="400,0,0,0"
+                Placeholder="Select Destination"
+                WidthRequest="200" />
+
+            <!--  **Departure Date**  -->
+            <DatePicker x:Name="departurepck" Grid.Column="1" />
+            <!--  **Return Date**  -->
+            <DatePicker
+                x:Name="returnpck"
+                Grid.Column="1"
+                Margin="110,0,0,0" />
+
+            <!--  **Quantities**  -->
+            <Entry
+                x:Name="adultNum"
+                Grid.Row="1"
+                Grid.Column="0"
+                Keyboard="Numeric"
+                Placeholder="Adult Quantity"
+                WidthRequest="200" />
+            <Entry
+                x:Name="childNum"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="400,0,0,0"
+                Keyboard="Numeric"
+                Placeholder="Children Quantity"
+                WidthRequest="200" />
+            <Entry
+                x:Name="infantNum"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,0,625,0"
+                Keyboard="Numeric"
+                Placeholder="Infant Quantity"
+                WidthRequest="200" />
+            <Entry
+                x:Name="promoCode"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,0,185,0"
+                Placeholder="Promo Code (optional)"
+                WidthRequest="200" />
+
+            <!--  **Button for Search Flight**  -->
+            <Button
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0,0,135,0"
+                BackgroundColor="#149bcc"
+                Clicked="OnButtonClicked"
+                FontSize="10"
+                Text="Search Flight"
+                WidthRequest="150" />
         </Grid>
     </StackLayout>
 
-    
+
 </ContentPage>

@@ -20,11 +20,11 @@ namespace SK_Airlines_App.Models
 
         public string ReturnDate { get; set; }
         public string PromoCode { get; set; }
-        public int TravelClass { get; set; }
+        public string TravelClass { get; set; }
 
         public BookingFlight(string origin, string destination, string noAdults, string noChildren,
             string noInfants, string flightType, string departureDate, string returnDate, string promoCode
-            , int travelClass)
+            , string travelClass)
         {
             Origin = origin;
             Destination = destination;
