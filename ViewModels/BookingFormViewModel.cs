@@ -32,11 +32,13 @@ namespace SK_Airlines_App.ViewModel
             ConvertToProductCollection();
         }
 
+        //unknown code
+        /*
         public void SearchFlight(BookingFlight BookingFlightObject)
         {
             //BookingCollections.Add(BookingFlightObject);
             AddToFile();
-        }
+        }*/
 
         public void AddToFile()
         {
