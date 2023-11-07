@@ -34,19 +34,19 @@ namespace SK_Airlines_App
         {
             if(sender == placeSample1)
             {
-                await placeSample1.ScaleTo(2, 170);
+                await placeSample1.ScaleTo(2, 180);
             }
             else if(sender == placeSample2)
             {
-                await placeSample2.ScaleTo(2, 170);
+                await placeSample2.ScaleTo(2, 180);
             }
             else if (sender == placeSample3)
             {
-                await placeSample3.ScaleTo(2, 170);
+                await placeSample3.ScaleTo(2, 180);
             }
             else if (sender == placeSample4)
             {
-                await placeSample4.ScaleTo(2, 170);
+                await placeSample4.ScaleTo(2, 180);
             }
         }
 
@@ -54,19 +54,19 @@ namespace SK_Airlines_App
         {
             if(sender == placeSample1)
             {
-                await placeSample1.ScaleTo(1, 170);
+                await placeSample1.ScaleTo(1, 175);
             }
             else if(sender == placeSample2)
             {
-                await placeSample2.ScaleTo(1, 170);
+                await placeSample2.ScaleTo(1, 175);
             }
             else if (sender == placeSample3)
             {
-                await placeSample3.ScaleTo(1, 170);
+                await placeSample3.ScaleTo(1, 175);
             }
             else if (sender == placeSample4)
             {
-                await placeSample4.ScaleTo(1, 170);
+                await placeSample4.ScaleTo(1, 175);
             }
         }
     }
