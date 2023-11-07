@@ -1,5 +1,3 @@
-
-
 namespace SK_Airlines_App;
 
 public partial class FlightBookingPage : ContentPage
@@ -15,10 +13,8 @@ public partial class FlightBookingPage : ContentPage
     //frame 1
 	private async void OnTappedFrame1(object sender, TappedEventArgs e)
 	{
-        //await Navigation.PushAsync(new FlightBookingSelection());
-        var price = 4717.72;
-        await Shell.Current.GoToAsync($"{nameof(FlightBookingSelection)}?price={price}");
-    }
+		await Navigation.PushAsync(new FlightBookingSelection());
+	}
 
     //frame2
     private async void OnTappedFrame2(object sender, TappedEventArgs e)

@@ -1,227 +1,83 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    x:Class="SK_Airlines_App.FlightBookingSelection"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="FlightBookingSelection">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SK_Airlines_App.FlightBookingSelection"
+             Title="FlightBookingSelection">
 
 
     <StackLayout>
         <HorizontalStackLayout>
-            <Label
-                Padding="10"
-                FontSize="20"
-                Text="Placeholder-Placeholder" />
-            <Label
-                Padding="80,10,0,0"
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="Book Flight"
-                TextColor="#149bcc" />
-            <Label
-                Padding="40,10,0,0"
-                FontSize="20"
-                Text="Guest Details" />
-            <Label
-                Padding="40,10,0,0"
-                FontSize="20"
-                Text="Add-ons" />
-            <Label
-                Padding="40,10,0,0"
-                FontSize="20"
-                Text="Payment" />
-            <Label
-                Padding="40,10,0,0"
-                FontSize="20"
-                Text="Confirmation" />
+            <Label Text="Placeholder-Placeholder" FontSize="20" Padding="10"/>
+            <Label Text="Book Flight" FontSize="20" Padding="80,10,0,0" FontAttributes="Bold" TextColor="#149bcc"/>
+            <Label Text="Guest Details" FontSize="20" Padding="40,10,0,0"/>
+            <Label Text="Add-ons" FontSize="20" Padding="40,10,0,0"/>
+            <Label Text="Payment" FontSize="20" Padding="40,10,0,0"/>
+            <Label Text="Confirmation" FontSize="20" Padding="40,10,0,0"/>
         </HorizontalStackLayout>
-
-        <StackLayout Padding="0,5,0,0" Orientation="Horizontal">
-            <BoxView
-                BackgroundColor="Black"
-                HeightRequest="6"
-                HorizontalOptions="FillAndExpand" />
+        
+        <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
+            <BoxView HeightRequest="6" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
         </StackLayout>
 
-        <Label Padding="10" Text="Select your Departing Flight" />
+        <Label Text="Select your Departing Flight" Padding="10"/>
 
-        <Frame
-            Background="#dbd9d3"
-            BackgroundColor="White"
-            BorderColor="Black"
-            HeightRequest="400"
-            WidthRequest="650">
+        <Frame BackgroundColor="White" BorderColor="Black" HeightRequest="400" WidthRequest="650" Background="#dbd9d3">
 
             <Grid RowDefinitions="*,*">
-                <Frame
-                    Grid.Row="0"
-                    Margin="0,0,0,118.5"
-                    BackgroundColor="White"
-                    BorderColor="Black"
-                    CornerRadius="10"
-                    HeightRequest="100"
-                    WidthRequest="650">
+                <Frame Grid.Row="0" BackgroundColor="White" BorderColor="Black" HeightRequest="100" WidthRequest="650" CornerRadius="10" Margin="0,0,0,118.5">
                     <HorizontalStackLayout>
-                        <Label
-                            FontAttributes="Bold"
-                            Text="8:45 PM"
-                            TextColor="Black" />
-                        <Label
-                            Padding="3"
-                            FontFamily="Icon"
-                            Text=" &#xE800;"
-                            TextColor="DeepSkyBlue" />
-                        <Label
-                            FontAttributes="Bold"
-                            Text="  10:20 PM"
-                            TextColor="Black" />
-                        <Label Text="    1h 40m" TextColor="Black" />
-                        <Label Text="    5J 571" TextColor="Black" />
-                        <Label
-                            Padding="200,0,0,0"
-                            FontAttributes="Bold"
-                            Text="PHP 4,717.72"
-                            TextColor="Black" />
+                        <Label Text="8:45 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label FontFamily="Icon" Text=" &#xE800;" TextColor="DeepSkyBlue" Padding="3"/>
+                        <Label Text="  10:20 PM" TextColor="Black" FontAttributes="Bold"/>
+                        <Label Text="    1h 40m" TextColor="Black"/>
+                        <Label Text="    5J 571" TextColor="Black"/>
+                        <Label Text="PHP 4,717.72" TextColor="Black" Padding="200,0,0,0" FontAttributes="Bold"/>
                     </HorizontalStackLayout>
                 </Frame>
 
                 <StackLayout Grid.Row="1">
                     <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10">
-                        <Frame
-                            Grid.Column="0"
-                            Background="White"
-                            HeightRequest="190">
+                        <Frame Grid.Column="0" HeightRequest="190" Background="White">
                             <StackLayout>
-                                <Label
-                                    FontAttributes="Bold"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Economy"
-                                    TextColor="Black" />
-                                <Label
-                                    FontAttributes="Bold"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Php 4,717.72"
-                                    TextColor="#149bcc" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Lowest fares for your travel budget"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Free cabin baggage allowance"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Complimentary snacks, drinks and entertainment"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Earn Air miles for rewards"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Seat Pitch 28:34in, seat width: 16.33in"
-                                    TextColor="Black" />
-                                <Button
-                                    Margin="0,8,0,0"
-                                    Background="#149bcc"
-                                    Clicked="OnClickedFrameEconomy"
-                                    HorizontalOptions="Center"
-                                    Text="Select"
-                                    WidthRequest="150" />
+                                <Label Text="Economy" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="Php 4,717.20" TextColor="#149bcc" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="* Lowest fares for your travel budget" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Free cabin baggage allowance" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Complimentary snacks, drinks and entertainment" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Earn Air miles for rewards" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Seat Pitch 28:34in, seat width: 16.33in" TextColor="Black" FontSize="8"/>
+                                <Button Text="Select" HorizontalOptions="Center" WidthRequest="150"  Background="#149bcc" Margin="0,8,0,0"/>
                             </StackLayout>
                         </Frame>
-                        <Frame
-                            Grid.Column="1"
-                            Background="White"
-                            HeightRequest="190">
+                        <Frame Grid.Column="1" HeightRequest="190" Background="White">
                             <StackLayout>
-                                <Label
-                                    FontAttributes="Bold"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Business"
-                                    TextColor="Black" />
-                                <Label
-                                    FontAttributes="Bold"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Php 6,200.20"
-                                    TextColor="#149bcc" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Lowest fares for your travel budget"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Free cabin baggage allowance"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Complimentary snacks, drinks and entertainment"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Earn Air miles for rewards"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Seat Pitch 28:34in, seat width: 16.33in"
-                                    TextColor="Black" />
-                                <Button
-                                    Margin="0,5,0,0"
-                                    Background="#149bcc"
-                                    HorizontalOptions="Center"
-                                    Text="Select"
-                                    WidthRequest="150" />
+                                <Label Text="Business" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="Php 6,200.20" TextColor="#149bcc" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="* Lowest fares for your travel budget" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Free cabin baggage allowance" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Complimentary snacks, drinks and entertainment" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Earn Air miles for rewards" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Seat Pitch 28:34in, seat width: 16.33in" TextColor="Black" FontSize="8"/>
+                                <Button Text="Select" HorizontalOptions="Center" WidthRequest="150"  Background="#149bcc" Margin="0,5,0,0"/>
                             </StackLayout>
                         </Frame>
-                        <Frame
-                            Grid.Column="2"
-                            Background="White"
-                            HeightRequest="190">
+                        <Frame Grid.Column="2" HeightRequest="190" Background="White">
                             <StackLayout>
-                                <Label
-                                    FontAttributes="Bold"
-                                    HorizontalTextAlignment="Center"
-                                    Text="First Class"
-                                    TextColor="Black" />
-                                <Label
-                                    FontAttributes="Bold"
-                                    HorizontalTextAlignment="Center"
-                                    Text="Php 7,717.98"
-                                    TextColor="#149bcc" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Expensive fares for your travels"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Free cabin baggage allowance"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* First class experience"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Earn Air miles for rewards"
-                                    TextColor="Black" />
-                                <Label
-                                    FontSize="8"
-                                    Text="* Seat Pitch 28:34in, seat width: 20.33in"
-                                    TextColor="Black" />
-                                <Button
-                                    Margin="0,15,0,0"
-                                    Background="#149bcc"
-                                    HorizontalOptions="Center"
-                                    Text="Select"
-                                    WidthRequest="150" />
+                                <Label Text="First Class" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="Php 7,717.98" TextColor="#149bcc" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="* Expensive fares for your travels" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Free cabin baggage allowance" TextColor="Black" FontSize="8"/>
+                                <Label Text="* First class experience" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Earn Air miles for rewards" TextColor="Black" FontSize="8"/>
+                                <Label Text="* Seat Pitch 28:34in, seat width: 20.33in" TextColor="Black" FontSize="8"/>
+                                <Button Text="Select" HorizontalOptions="Center" WidthRequest="150"  Background="#149bcc" Margin="0,15,0,0"/>
                             </StackLayout>
                         </Frame>
                     </Grid>
                 </StackLayout>
             </Grid>
-
+            
         </Frame>
     </StackLayout>
-
+    
 </ContentPage>

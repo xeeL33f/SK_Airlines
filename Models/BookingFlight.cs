@@ -37,6 +37,7 @@ namespace SK_Airlines_App.Models
             PromoCode = promoCode;
             TravelClass = travelClass;
             OnPropertyChanged();
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

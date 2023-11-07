@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SK_Airlines_App.Models
 {
-    class Register:INotifyPropertyChanged
+    class Register
     {
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
@@ -25,13 +23,6 @@ namespace SK_Airlines_App.Models
             LastName = lastName;
             PhoneNum = phoneNum;
             Nickname = nickName;
-            OnPropertyChanged();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
