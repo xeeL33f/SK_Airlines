@@ -24,8 +24,9 @@ public partial class FlightBookingSelection : ContentPage
 
 	private async void OnClickedFrameEconomy(object sender, EventArgs e)
 	{
-        await Shell.Current.GoToAsync($"{nameof(TestBookingSummary)}?price={Price}");
-        //await Navigation.PushAsync(new TestBookingSummary());
+        //await Shell.Current.GoToAsync($"{nameof(TestBookingSummary)}?price={Price}");
+        await Navigation.PushAsync(new GuestDetailsPage());
+		//Shell.Current.GoToAsync($"{nameof(GuestDetailsPage)}");
     }
 
 

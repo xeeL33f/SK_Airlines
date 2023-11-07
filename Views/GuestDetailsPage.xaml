@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SK_Airlines_App.Views.GuestDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="GuestDetailsPage">
+    <StackLayout>
+        <HorizontalStackLayout>
+            <Label
+                Padding="10"
+                FontSize="20"
+                Text="Placeholder-Placeholder" />
+            <Label
+                Padding="80,10,0,0"
+                FontSize="20"
+                Text="Book Flight" />
+            <Label
+                Padding="40,10,0,0"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="Guest Details"
+                TextColor="#149bcc" />
+            <Label
+                Padding="40,10,0,0"
+                FontSize="20"
+                Text="Add-ons" />
+            <Label
+                Padding="40,10,0,0"
+                FontSize="20"
+                Text="Payment" />
+            <Label
+                Padding="40,10,0,0"
+                FontSize="20"
+                Text="Confirmation" />
+        </HorizontalStackLayout>
+
+
+        <StackLayout Padding="0,5,0,0" Orientation="Horizontal">
+            <BoxView
+                BackgroundColor="Black"
+                HeightRequest="6"
+                HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+
+        <Label
+            Padding="10"
+            FontAttributes="Bold"
+            FontSize="30"
+            Text="Guest Details" />
+
+
+
+    </StackLayout>
+</ContentPage>
