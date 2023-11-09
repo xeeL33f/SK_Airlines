@@ -31,5 +31,8 @@ public partial class FlightBookingSelection : ContentPage
 
     }
 
+    private void Button_Clicked(object sender, EventArgs e)
+    {
 
+    }
 }

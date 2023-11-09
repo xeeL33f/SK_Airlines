@@ -22,7 +22,7 @@ public partial class GuestDetailsPage : ContentPage
         for (int i = 0; i < adultQuantity; i++)
         {
             var stackLayout = new StackLayout();
-            stackLayout.Children.Add(new Label { Text = $"Adult {i++}" });
+            stackLayout.Children.Add(new Label { Text = $"Adult {i+1}" });
             stackLayout.Children.Add(new Entry { Placeholder = "First Name" });
             Content = stackLayout;
         }
