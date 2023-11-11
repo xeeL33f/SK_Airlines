@@ -69,7 +69,7 @@ namespace SK_Airlines_App.ViewModels
 
         public int ChildrenQuantifier()
         {
-            var childrenQuantity = Int32.Parse(LastItem.NoAdults);
+            var childrenQuantity = Int32.Parse(LastItem.NoChildren);
             return childrenQuantity;
         }
 
