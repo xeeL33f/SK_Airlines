@@ -8,9 +8,9 @@
         <StackLayout>
             <HorizontalStackLayout>
                 <Label Text="Placeholder-Placeholder" FontSize="20" Padding="10"/>
-                <Label Text="Book Flight" FontSize="20" Padding="80,10,0,0" FontAttributes="Bold" TextColor="#149bcc"/>
+                <Label Text="Book Flight" FontSize="20" Padding="80,10,0,0"/>
                 <Label Text="Guest Details" FontSize="20" Padding="40,10,0,0"/>
-                <Label Text="Add-ons" FontSize="20" Padding="40,10,0,0"/>
+                <Label Text="Add-ons" FontSize="20" Padding="40,10,0,0" FontAttributes="Bold" TextColor="#149bcc"/>
                 <Label Text="Payment" FontSize="20" Padding="40,10,0,0"/>
                 <Label Text="Confirmation" FontSize="20" Padding="40,10,0,0"/>
             </HorizontalStackLayout>
@@ -19,34 +19,50 @@
             </StackLayout>
 
             <Label Text="Customize your flight with add-ons!" Padding="10" FontSize="25"/>
-            <Label Text="Add-ons you have" Padding="10"/>
-
+            <Label Text="Add-ons you have" Padding="10" FontSize="30"/>
 
             <Grid RowDefinitions="*,*" ColumnDefinitions="Auto,Auto,Auto,Auto"  ColumnSpacing="25" RowSpacing="25" HorizontalOptions="CenterAndExpand">
 
+                <Label Grid.Column="0" Grid.Row="0" Text="BAGGAGE" TextColor="#149bcc" ZIndex="1" Padding="10,0,10,10" FontSize="20"/>
+                <Label Grid.Column="0" Grid.Row="0" Text="Free 20 kgs/ticket" TextColor="Black" ZIndex="1" Padding="10,30,10,10" FontSize="12"/>
                 <Frame Grid.Column="0" Grid.Row="0" WidthRequest="250" HeightRequest="285" BorderColor="Black" BackgroundColor="White">
-                    <Image Source="suitcase.png"/>
+                    <Image Source="suitcase.png" MinimumWidthRequest="150" MinimumHeightRequest="150" WidthRequest="150" HeightRequest="150"/>
                 </Frame>
+                <CheckBox Grid.Column="0" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" Color="LightGreen" ZIndex="1"/>
 
+                <Label Grid.Column="1" Grid.Row="0" Text="SEATS" TextColor="#149bcc" ZIndex="1" Padding="10,0,10,10" FontSize="20"/>
+                <Label Grid.Column="1" Grid.Row="0" Text="You may select your preferred seat" TextColor="Black" ZIndex="1" Padding="10,30,10,10" FontSize="12"/>
                 <Frame Grid.Column="1" Grid.Row="0" WidthRequest="250" HeightRequest="285" BorderColor="Black" BackgroundColor="White" HorizontalOptions="StartAndExpand">
-                    <Image Source="seat.png"/>
+                    <Image Source="seat.png" MinimumWidthRequest="150" MinimumHeightRequest="150" WidthRequest="150" HeightRequest="150"/>
                 </Frame>
+                <CheckBox Grid.Column="1" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" Color="LightGreen" ZIndex="1"/>
 
+                <Label Grid.Column="2" Grid.Row="0" Text="MEAL" TextColor="#149bcc" ZIndex="1" Padding="10,0,10,10" FontSize="20"/>
+                <Label Grid.Column="2" Grid.Row="0" Text="In-flight meals" TextColor="Black" ZIndex="1" Padding="10,30,10,10" FontSize="12"/>
                 <Frame Grid.Column="2" Grid.Row="0" WidthRequest="250" HeightRequest="285" BorderColor="Black" BackgroundColor="White" HorizontalOptions="StartAndExpand">
-                    <Image Source="food.png"/>
+                    <Image Source="food.png" MinimumWidthRequest="150" MinimumHeightRequest="150" WidthRequest="150" HeightRequest="150"/>
                 </Frame>
+                <CheckBox Grid.Column="2" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" Color="LightGreen" ZIndex="1"/>
 
+                <Label Grid.Column="3" Grid.Row="0" Text="INSURANCE" TextColor="#149bcc" ZIndex="1" Padding="10,0,10,10" FontSize="20"/>
+                <Label Grid.Column="3" Grid.Row="0" Text="Pre-selected for you" TextColor="Black" ZIndex="1" Padding="10,30,10,10" FontSize="12"/>
                 <Frame Grid.Column="3" Grid.Row="0" WidthRequest="250" HeightRequest="285" BorderColor="Black" BackgroundColor="White" HorizontalOptions="StartAndExpand">
-                    <Image Source="travel_insurance.png"/>
+                    <Image Source="travel_insurance.png" MinimumWidthRequest="150" MinimumHeightRequest="150" WidthRequest="150" HeightRequest="150"/>
                 </Frame>
+                <CheckBox Grid.Column="3" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" Color="LightGreen" ZIndex="1"/>
+
+                <Label Grid.Column="0" Grid.Row="1" Text="TRANSPORT" TextColor="#149bcc" ZIndex="1" Padding="10,0,10,10" FontSize="20"/>
+                <Label Grid.Column="0" Grid.Row="1" Text="Get transported to your hotel" TextColor="Black" ZIndex="1" Padding="10,30,10,10" FontSize="12"/>
+                <Frame Grid.Column="0" Grid.Row="1" WidthRequest="250" HeightRequest="285" BorderColor="Black" BackgroundColor="White" HorizontalOptions="StartAndExpand">
+                    <Image Source="transportation.png" MinimumWidthRequest="150" MinimumHeightRequest="150" WidthRequest="150" HeightRequest="150"/>
+                </Frame>
+                <CheckBox Grid.Column="0" Grid.Row="1   " VerticalOptions="End" HorizontalOptions="Center" Color="LightGreen" ZIndex="1"/>
 
             </Grid>
 
-            <Grid RowDefinitions="*" ColumnDefinitions="Auto" HorizontalOptions="CenterAndExpand">
-                <Frame Grid.Column="0" Grid.Row="0" WidthRequest="250" HeightRequest="285" BorderColor="Black" BackgroundColor="White" HorizontalOptions="StartAndExpand" Margin="100">
-                    <Image Source="transportation.png"/>
-                </Frame>
-            </Grid>
+            <Button MinimumHeightRequest="50" MinimumWidthRequest="200" WidthRequest="200" HeightRequest="50" Margin="0,10" Text="Continue"/>
+
+
         </StackLayout>
     </ScrollView>
     
