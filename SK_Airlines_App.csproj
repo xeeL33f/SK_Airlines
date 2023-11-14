@@ -57,11 +57,16 @@
 	  <None Remove="Resources\Images\cabin_plane.jpg" />
 	  <None Remove="Resources\Images\cebu.jpg" />
 	  <None Remove="Resources\Images\come_fly.jpg" />
+	  <None Remove="Resources\Images\food.png" />
 	  <None Remove="Resources\Images\plane_hdd.jpg" />
+	  <None Remove="Resources\Images\seat.png" />
 	  <None Remove="Resources\Images\siargao.jpg" />
 	  <None Remove="Resources\Images\sky_bg.jpg" />
+	  <None Remove="Resources\Images\suitcase.png" />
 	  <None Remove="Resources\Images\swap_32size.png" />
+	  <None Remove="Resources\Images\transportation.png" />
 	  <None Remove="Resources\Images\traveller.jpg" />
+	  <None Remove="Resources\Images\travel_insurance.png" />
 	</ItemGroup>
 
 	<ItemGroup>

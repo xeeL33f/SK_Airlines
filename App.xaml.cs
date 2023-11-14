@@ -1,4 +1,6 @@
-﻿namespace SK_Airlines_App
+﻿using SK_Airlines_App.Views;
+
+namespace SK_Airlines_App
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new AddonsPage();
         }
     }
 }
