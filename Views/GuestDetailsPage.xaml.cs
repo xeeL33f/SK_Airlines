@@ -406,6 +406,7 @@ public partial class GuestDetailsPage : ContentPage
         }
         mainStackLayout.Children.Add(dynamicControlsStackLayut);
 
+
         // Create the Label for "Guest Details"
         Label guestContactInformation = new Label
         {
@@ -454,6 +455,12 @@ public partial class GuestDetailsPage : ContentPage
             WidthRequest = 100
         };
 
+        Button GuestSubmitButtonIsClicked = new Button
+        {
+            Text = "Submit",
+            WidthRequest= 100,
+        };
+
 
         // Add the Label for "Guest Details" to the main StackLayout
         mainStackLayout.Children.Add(guestContactInformation);
@@ -462,6 +469,7 @@ public partial class GuestDetailsPage : ContentPage
         mainStackLayout.Children.Add(guestEntryLastNameContactInformation);
         mainStackLayout.Children.Add(guestContactNumber);
         mainStackLayout.Children.Add(guestEmail);
+        mainStackLayout.Children.Add(GuestSubmitButtonIsClicked);
 
 
         ScrollView scrollView = new ScrollView
@@ -485,5 +493,12 @@ public partial class GuestDetailsPage : ContentPage
             // Do something with the selected option
             //DisplayAlert("Selected Option", selectedOption, "OK");
         }
+    }
+
+
+
+    private void GuestSubmitButtonIsClicked(object sender, EventArgs e)
+    {
+        guestDetailsPageViewModel.GuestTicketSave();
     }
 }

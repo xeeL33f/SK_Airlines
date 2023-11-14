@@ -18,12 +18,37 @@ namespace SK_Airlines_App.ViewModels
         string maindir = FileSystem.Current.AppDataDirectory;
         public ObservableCollection<BookingFlight> bookingCollection = new ObservableCollection<BookingFlight>();
 
+
         public ObservableCollection<BookingFlight> BookingCollections
         {
             get { return bookingCollection; }
             set
             {
                 bookingCollection = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<GuestDetails> guestDetailsCollection = new ObservableCollection<GuestDetails>();
+
+        public ObservableCollection<GuestDetails> GuestDetailsCollection
+        {
+            get { return guestDetailsCollection; }
+            set
+            {
+                guestDetailsCollection = value;
+                OnPropertyChanged();
+            }
+        }
+        
+        public ObservableCollection<GuestDetails> guestContactInformation = new ObservableCollection<GuestDetails>();
+
+        public ObservableCollection<GuestDetails> GuestContactInformation
+        {
+            get { return guestContactInformation; }
+            set
+            {
+                guestContactInformation = value;
                 OnPropertyChanged();
             }
         }
@@ -71,6 +96,11 @@ namespace SK_Airlines_App.ViewModels
         {
             var childrenQuantity = Int32.Parse(LastItem.NoChildren);
             return childrenQuantity;
+        }
+
+        public void GuestTicketSave()
+        {
+            
         }
 
 
