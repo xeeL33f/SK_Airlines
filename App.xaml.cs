@@ -8,7 +8,7 @@ namespace SK_Airlines_App
         {
             InitializeComponent();
 
-            MainPage = new AddonsPage();
+            MainPage = new AppShell();
         }
     }
 }
