@@ -1,10 +1,29 @@
 using SK_Airlines_App.ViewModels;
+using SK_Airlines_App.Models;
+using System.Collections.ObjectModel;
 
 namespace SK_Airlines_App.Views;
 
 public partial class GuestDetailsPage : ContentPage
 {
     GuestDetailsPageViewModel guestDetailsPageViewModel = new GuestDetailsPageViewModel();
+
+
+    public ObservableCollection<GuestDetails> guestCollection = new ObservableCollection<GuestDetails>();
+
+
+    public ObservableCollection<GuestDetails> GuestCollection
+    {
+        get { return guestCollection; }
+        set
+        {
+            guestCollection = value;
+            OnPropertyChanged();
+        }
+    }
+
+
+
 
     public GuestDetailsPage()
 	{
@@ -220,6 +239,15 @@ public partial class GuestDetailsPage : ContentPage
                 guestPickerNationality.Items.Add(item);
             }
 
+
+            //saving to the collection
+            GuestDetails GuestInfo = new GuestDetails(guestPickerPrefix.SelectedItem.ToString(),guestEntryFirstName.Text,
+                guestEntryLastName.Text,guestDatePicker.Date.ToString("dd/MM/yyyy"),guestPickerNationality.SelectedItem.ToString());
+
+            GuestCollection.Add(GuestInfo);
+
+
+
             //stackLayout.Children.Add(new Label { Text = $"Adult {i + 1}" });
             //stackLayout.Children.Add(new Entry { Placeholder = "First Name" });
             //Content = stackLayout;
@@ -304,6 +332,10 @@ public partial class GuestDetailsPage : ContentPage
                 guestPickerNationality.Items.Add(item);
             }
 
+            GuestDetails GuestInfo = new GuestDetails(guestPickerPrefix.SelectedItem.ToString(), guestEntryFirstName.Text,
+                guestEntryLastName.Text, guestDatePicker.Date.ToString("dd/MM/yyyy"), guestPickerNationality.SelectedItem.ToString());
+
+            GuestCollection.Add(GuestInfo);
             //stackLayout.Children.Add(new Label { Text = $"Adult {i + 1}" });
             //stackLayout.Children.Add(new Entry { Placeholder = "First Name" });
             //Content = stackLayout;
@@ -388,6 +420,11 @@ public partial class GuestDetailsPage : ContentPage
             {
                 guestPickerNationality.Items.Add(item);
             }
+
+            GuestDetails GuestInfo = new GuestDetails(guestPickerPrefix.SelectedItem.ToString(), guestEntryFirstName.Text,
+                guestEntryLastName.Text, guestDatePicker.Date.ToString("dd/MM/yyyy"), guestPickerNationality.SelectedItem.ToString());
+
+            GuestCollection.Add(GuestInfo);
 
             //stackLayout.Children.Add(new Label { Text = $"Adult {i + 1}" });
             //stackLayout.Children.Add(new Entry { Placeholder = "First Name" });
@@ -479,6 +516,9 @@ public partial class GuestDetailsPage : ContentPage
 
         // Set the main StackLayout as the content of the page
         Content = scrollView;
+
+        //Save to a ObservableCollection
+        
     }
 
     private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
@@ -499,6 +539,10 @@ public partial class GuestDetailsPage : ContentPage
 
     private void GuestSubmitButtonIsClicked(object sender, EventArgs e)
     {
-        guestDetailsPageViewModel.GuestTicketSave();
+        var adultQuantity = guestDetailsPageViewModel.AdultQuantifier();
+        var InfantQuantity = guestDetailsPageViewModel.InfantQuantifier();
+        var ChildrenQuantity = guestDetailsPageViewModel.ChildrenQuantifier();
+
+
     }
 }
