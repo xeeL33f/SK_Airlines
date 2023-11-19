@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SK_Airlines_App.Views.TestBookingSummary"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SK_Airlines_app;assembly=SK_Airlines_app"
+    xmlns:vm="clr-namespace:SK_Airlines_App.ViewModels"
+    Title="TestBookingSummary"
+    x:DataType="vm:TestBookingSummaryViewModelPage">
+
+    <ScrollView>
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <HorizontalStackLayout>
+                <Label FontSize="50" Text="Booking Summary" />
+            </HorizontalStackLayout>
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="{Binding Price}" />
+                <Label Text="{Binding BookingCollection[0].Origin}" />
+                <Label Text="{Binding BookingCollection[0].Destination}" />
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
