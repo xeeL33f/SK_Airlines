@@ -40,6 +40,7 @@ public partial class GuestDetailsPage : ContentPage
 
         List<string> pickerItemsPrefix = new List<string>
         {
+            "Select",
             "Mr",
             "Mrs",
             "Ms",
@@ -47,6 +48,7 @@ public partial class GuestDetailsPage : ContentPage
         
         List<string> pickerItemsNationality = new List<string>
         {
+            "Select",
             "Filipino",
             "American",
             "Bahamian",
@@ -240,11 +242,8 @@ public partial class GuestDetailsPage : ContentPage
             }
 
 
-            //saving to the collection
-            GuestDetails GuestInfo = new GuestDetails(guestPickerPrefix.SelectedItem.ToString(),guestEntryFirstName.Text,
-                guestEntryLastName.Text,guestDatePicker.Date.ToString("dd/MM/yyyy"),guestPickerNationality.SelectedItem.ToString());
-
-            GuestCollection.Add(GuestInfo);
+            guestPickerNationality.SelectedItem = "Select";
+            guestPickerPrefix.SelectedItem = "Select";
 
 
 
@@ -262,6 +261,11 @@ public partial class GuestDetailsPage : ContentPage
             dynamicControlsStackLayut.Children.Add(guestPickerNationality);
             //dynamicControlsStackLayut.Children.Add(dynamicControlsStackLayoutHorizontalOptions);
             //dynamicControlsStackLayut.Dispatcher.Dispatch(() => dynamicControlsStackLayut.Children.Add(dynamicControlsStackLayoutHorizontalOptions));
+            //saving to the collection
+            GuestDetails GuestInfo = new GuestDetails(guestPickerPrefix.SelectedItem.ToString(), guestEntryFirstName.Text,
+                guestEntryLastName.Text, guestDatePicker.Date.ToString("dd/MM/yyyy"), guestPickerNationality.SelectedItem.ToString());
+
+            GuestCollection.Add(GuestInfo);
         }
         //mainStackLayout.Children.Add(dynamicControlsStackLayut);
 
@@ -332,10 +336,10 @@ public partial class GuestDetailsPage : ContentPage
                 guestPickerNationality.Items.Add(item);
             }
 
-            GuestDetails GuestInfo = new GuestDetails(guestPickerPrefix.SelectedItem.ToString(), guestEntryFirstName.Text,
+            /*GuestDetails GuestInfo = new GuestDetails(guestPickerPrefix.SelectedItem.ToString(), guestEntryFirstName.Text,
                 guestEntryLastName.Text, guestDatePicker.Date.ToString("dd/MM/yyyy"), guestPickerNationality.SelectedItem.ToString());
 
-            GuestCollection.Add(GuestInfo);
+            GuestCollection.Add(GuestInfo);*/
             //stackLayout.Children.Add(new Label { Text = $"Adult {i + 1}" });
             //stackLayout.Children.Add(new Entry { Placeholder = "First Name" });
             //Content = stackLayout;
@@ -350,6 +354,7 @@ public partial class GuestDetailsPage : ContentPage
             dynamicControlsStackLayut.Children.Add(guestPickerNationality);
             //dynamicControlsStackLayut.Children.Add(dynamicControlsStackLayoutHorizontalOptions);
             //dynamicControlsStackLayut.Dispatcher.Dispatch(() => dynamicControlsStackLayut.Children.Add(dynamicControlsStackLayoutHorizontalOptions));
+            SaveAdminGuestInfo(guestPickerPrefix,guestEntryFirstName, guestEntryLastName, guestDatePicker, guestPickerNationality); 
         }
         //mainStackLayout.Children.Add(dynamicControlsStackLayut);
 
@@ -535,7 +540,13 @@ public partial class GuestDetailsPage : ContentPage
         }
     }
 
+    public void SaveAdminGuestInfo(Picker guestPickerPrefix, Entry guestEntryFirstName, Entry guestEntryLastName, DatePicker guestDatePicker, Picker guestPickerNationality)
+    {
+        GuestDetails GuestInfo = new GuestDetails(guestPickerPrefix.SelectedItem.ToString(), guestEntryFirstName.Text,
+                           guestEntryLastName.Text, guestDatePicker.Date.ToString("dd/MM/yyyy"), guestPickerNationality.SelectedItem.ToString());
 
+        GuestCollection.Add(GuestInfo);
+    }
 
     private void GuestSubmitButtonIsClicked(object sender, EventArgs e)
     {
