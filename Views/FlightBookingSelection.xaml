@@ -40,7 +40,7 @@
                         <Frame Grid.Column="0" HeightRequest="190" Background="White">
                             <StackLayout>
                                 <Label Text="Economy" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                                <Label Text="Php 4,717.20" TextColor="#149bcc" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="Php 4,717.72" TextColor="#149bcc" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                                 <Label Text="* Lowest fares for your travel budget" TextColor="Black" FontSize="8"/>
                                 <Label Text="* Free cabin baggage allowance" TextColor="Black" FontSize="8"/>
                                 <Label Text="* Complimentary snacks, drinks and entertainment" TextColor="Black" FontSize="8"/>

@@ -32,11 +32,11 @@ namespace SK_Airlines_App
 
         private async void TapGesureRecognizer_Tapped_ForScaleAnim(object sender, PointerEventArgs e)
         {
-            if(sender == placeSample1)
+            if (sender == placeSample1)
             {
                 await placeSample1.ScaleTo(2, 180);
             }
-            else if(sender == placeSample2)
+            else if (sender == placeSample2)
             {
                 await placeSample2.ScaleTo(2, 180);
             }

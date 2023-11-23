@@ -6,7 +6,7 @@ public partial class FlightBookingSelection : ContentPage
 {
 	public FlightBookingSelection()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
 
 	private async void OnButtonClicked(object sender, EventArgs e)
