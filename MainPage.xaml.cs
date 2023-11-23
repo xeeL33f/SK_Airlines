@@ -35,6 +35,11 @@ namespace SK_Airlines_App
 
         }
 
+        private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BookingForm());
+        }
+
         private async void OnLabelTapped(object sender, TappedEventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());
@@ -42,21 +47,21 @@ namespace SK_Airlines_App
 
         private async void TapGesureRecognizer_Tapped_ForScaleAnim(object sender, PointerEventArgs e)
         {
-            if(sender == placeSample1)
+            if (sender == placeSample1)
             {
-                await placeSample1.ScaleTo(2, 170);
+                await placeSample1.ScaleTo(2, 180);
             }
-            else if(sender == placeSample2)
+            else if (sender == placeSample2)
             {
-                await placeSample2.ScaleTo(2, 170);
+                await placeSample2.ScaleTo(2, 180);
             }
             else if (sender == placeSample3)
             {
-                await placeSample3.ScaleTo(2, 170);
+                await placeSample3.ScaleTo(2, 180);
             }
             else if (sender == placeSample4)
             {
-                await placeSample4.ScaleTo(2, 170);
+                await placeSample4.ScaleTo(2, 180);
             }
         }
 
@@ -64,19 +69,19 @@ namespace SK_Airlines_App
         {
             if(sender == placeSample1)
             {
-                await placeSample1.ScaleTo(1, 170);
+                await placeSample1.ScaleTo(1, 175);
             }
             else if(sender == placeSample2)
             {
-                await placeSample2.ScaleTo(1, 170);
+                await placeSample2.ScaleTo(1, 175);
             }
             else if (sender == placeSample3)
             {
-                await placeSample3.ScaleTo(1, 170);
+                await placeSample3.ScaleTo(1, 175);
             }
             else if (sender == placeSample4)
             {
-                await placeSample4.ScaleTo(1, 170);
+                await placeSample4.ScaleTo(1, 175);
             }
         }
     }

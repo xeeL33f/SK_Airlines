@@ -92,6 +92,43 @@
                             Background="White"
                             HeightRequest="190">
                             <StackLayout>
+                                <Label 
+                                    Text="Economy" 
+                                    TextColor="Black" 
+                                    FontAttributes="Bold" 
+                                    HorizontalTextAlignment="Center"/>
+                                <Label 
+                                    Text="Php 4,717.72" 
+                                    TextColor="#149bcc" 
+                                    FontAttributes="Bold" 
+                                    HorizontalTextAlignment="Center"/>
+                                <Label 
+                                    Text="* Lowest fares for your travel budget" 
+                                    TextColor="Black" 
+                                    FontSize="8"/>
+                                <Label 
+                                    Text="* Free cabin baggage allowance" 
+                                    TextColor="Black" 
+                                    FontSize="8"/>
+                                <Label 
+                                    Text="* Complimentary snacks, drinks and entertainment" 
+                                    TextColor="Black" 
+                                    FontSize="8"/>
+                                <Label 
+                                    Text="* Earn Air miles for rewards" 
+                                    TextColor="Black" 
+                                    FontSize="8"/>
+                                <Label 
+                                    Text="* Seat Pitch 28:34in, seat width: 16.33in" 
+                                    TextColor="Black" 
+                                    FontSize="8"/>
+                                <Button 
+                                    Text="Select" 
+                                    HorizontalOptions="Center" 
+                                    WidthRequest="150"  
+                                    Background="#149bcc" 
+                                    Margin="0,8,0,0" 
+                                    Clicked="OnButtonClicked"/>
                                 <Label
                                     FontAttributes="Bold"
                                     HorizontalTextAlignment="Center"
@@ -125,10 +162,11 @@
                                 <Button
                                     Margin="0,8,0,0"
                                     Background="#149bcc"
-                                    Clicked="OnClickedFrameEconomy"
+                                    Clicked="OnButtonClicked"
                                     HorizontalOptions="Center"
                                     Text="Select"
                                     WidthRequest="150" />
+
                             </StackLayout>
                         </Frame>
                         <Frame
@@ -171,7 +209,8 @@
                                     Background="#149bcc"
                                     HorizontalOptions="Center"
                                     Text="Select"
-                                    WidthRequest="150" />
+                                    WidthRequest="150"
+                                    Clicked="OnButtonClicked"/>
                             </StackLayout>
                         </Frame>
                         <Frame
@@ -214,7 +253,8 @@
                                     Background="#149bcc"
                                     HorizontalOptions="Center"
                                     Text="Select"
-                                    WidthRequest="150" />
+                                    WidthRequest="150"
+                                    Clicked="OnButtonClicked"/>
                             </StackLayout>
                         </Frame>
                     </Grid>
