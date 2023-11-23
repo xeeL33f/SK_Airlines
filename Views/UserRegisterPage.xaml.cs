@@ -1,8 +1,4 @@
 using SK_Airlines_App.Models;
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 namespace SK_Airlines_App;
 
 public partial class UserRegisterPage : ContentPage

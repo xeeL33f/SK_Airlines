@@ -19,21 +19,21 @@ public partial class FlightBookingSelection : ContentPage
 
 	public FlightBookingSelection()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
 
-<<<<<<< HEAD
+
 	private async void OnButtonClicked(object sender, EventArgs e)
 	{
 		await Navigation.PushAsync(new GuestDetailsPage());
 	}
-=======
-	private async void OnClickedFrameEconomy(object sender, EventArgs e)
-	{
-        await Shell.Current.GoToAsync($"{nameof(TestBookingSummary)}?price={Price}");
-        //await Navigation.PushAsync(new TestBookingSummary());
-    }
+
+	//private async void OnClickedFrameEconomy(object sender, EventArgs e)
+	//{
+ //       await Shell.Current.GoToAsync($"{nameof(TestBookingSummary)}?price={Price}");
+ //       //await Navigation.PushAsync(new TestBookingSummary());
+ //   }
 
 
->>>>>>> master
+
 }

@@ -35,6 +35,11 @@ namespace SK_Airlines_App
 
         }
 
+        private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BookingForm());
+        }
+
         private async void OnLabelTapped(object sender, TappedEventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());

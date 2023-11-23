@@ -37,7 +37,8 @@
                 Margin="0,10,40,0"
                 FontSize="15"
                 HorizontalOptions="End"
-                Text="Login">
+                Text="Login"
+                ZIndex="1">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnLabelTapped" />
                 </Label.GestureRecognizers>
@@ -216,7 +217,8 @@
                 BackgroundColor="#149bcc"
                 FontSize="25"
                 Text="Book A Flight"
-                WidthRequest="400" />
+                WidthRequest="400"
+                Clicked="OnButtonClicked"/>
 
         </Grid>
 
