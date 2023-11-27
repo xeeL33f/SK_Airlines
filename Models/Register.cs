@@ -16,8 +16,9 @@ namespace SK_Airlines_App.Models
         public string LastName { get; set; } = string.Empty;
         public string PhoneNum { get; set; } = string.Empty;
         public string Nickname { get; set; } = string.Empty;
+        public string ID { get; set; } = string.Empty;
 
-        public Register(string email, string password, string firstName, string lastName, string phoneNum, string nickName)
+        public Register(string email, string password, string firstName, string lastName, string phoneNum, string nickName,string id)
         {
             Email = email;
             Password = password;
@@ -25,6 +26,7 @@ namespace SK_Airlines_App.Models
             LastName = lastName;
             PhoneNum = phoneNum;
             Nickname = nickName;
+            ID = id;
             OnPropertyChanged();
         }
 
