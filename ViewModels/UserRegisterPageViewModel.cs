@@ -44,7 +44,7 @@ namespace SK_Airlines_App.ViewModels
         {
             for(var i=1;i!=0;i++)
             {
-                string filePath = Path.Combine(maindir, $"userData[{i}].json");
+                string filePath = Path.Combine(maindir, $"userDataTicketDatabase[{i}].json");
                 var jsonData = JsonSerializer.Serialize(UserCollections);
                 if (!File.Exists(filePath))
                 {
@@ -59,17 +59,24 @@ namespace SK_Airlines_App.ViewModels
 
         public void ConvertToProductCollection(string id)
         {
-            string filePath = Path.Combine(maindir, $"userData[{id}].json");
+            string filePath = Path.Combine(maindir, $"userData.json");
             if (File.Exists(filePath))
             {
                 string jsonData = File.ReadAllText(filePath);
                 UserCollections = JsonSerializer.Deserialize<ObservableCollection<Register>>(jsonData);
             }
+            else
+            {
+                var jsonData = JsonSerializer.Serialize(UserCollections);
+                UserCollections.Clear();
+                File.WriteAllText(filePath, jsonData);
+            }
         }
 
-        public void AddToFile(string id)
+
+    public void AddToFile(string id)
         {
-            string filePath = Path.Combine(maindir, $"userData[{id}].json");
+            string filePath = Path.Combine(maindir, $"userData.json");
 
             var json = string.Empty;
             json = JsonSerializer.Serialize(UserCollections);

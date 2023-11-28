@@ -81,8 +81,6 @@ namespace SK_Airlines_App.ViewModel
                 string jsonData = File.ReadAllText(filePath);
                 BookingCollections = JsonSerializer.Deserialize<ObservableCollection<BookingFlight>>(jsonData);
             }
-
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
