@@ -8,22 +8,21 @@ namespace SK_Airlines_App.Views;
 [QueryProperty(nameof(ID), "id")]
 public partial class GuestDetailsPageSubTickets : ContentPage
 {
-    private string _id;
+    GuestDetailsPageSubTicketsViewModel guestDetailsPageSubTickets = new GuestDetailsPageSubTicketsViewModel();
+
+    private string id;
     public string ID
     {
-        get { return _id; }
+        get { return id; }
         set
         {
-            _id = value;
+            id = value;
             OnPropertyChanged();
-            guestDetailsPageSubTickets.ConvertToProductCollection(ID);
+            ReadFile();
         }
     }
 
-    GuestDetailsPageSubTicketsViewModel guestDetailsPageSubTickets = new GuestDetailsPageSubTicketsViewModel();
-	ObservableCollection<BookingFlight> bookingCollection = new ObservableCollection<BookingFlight>();
-
-
+    
 
 	public GuestDetailsPageSubTickets()
 	{
@@ -31,7 +30,13 @@ public partial class GuestDetailsPageSubTickets : ContentPage
         BindingContext = guestDetailsPageSubTickets;
 	}
 
-	/*private async void OnClickedContinueBtn(object sender, EventArgs e)
+    public void ReadFile()
+    {
+        guestDetailsPageSubTickets.ConvertToProductCollection(ID);
+
+    }
+
+    /*private async void OnClickedContinueBtn(object sender, EventArgs e)
 	{
         await Navigation.PushAsync(new AddonsPage());
     }*/

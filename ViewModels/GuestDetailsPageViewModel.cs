@@ -71,7 +71,6 @@ namespace SK_Airlines_App.ViewModels
 
         public async void OnClickedContinueButton()
         {
-            string ID=string.Empty;
             ConvertToProductCollection();
             bool IsFoundFirstCondition = false;
             foreach (Register item in registeredUserData)

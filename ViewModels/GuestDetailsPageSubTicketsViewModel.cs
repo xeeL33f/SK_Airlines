@@ -9,45 +9,39 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using SK_Airlines_App.Views;
 using SK_Airlines_App.Models;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Graphics.Text;
 using System.Windows.Input;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace SK_Airlines_App.ViewModels
 {
 
-    internal class GuestDetailsPageSubTicketsViewModel:INotifyPropertyChanged
+    internal class GuestDetailsPageSubTicketsViewModel : INotifyPropertyChanged
     {
-        int globalAdultsInt=0;
-        int globalChildrenInt=0;
-        int globalInfantInt=0;
+
+        int globalAdultsInt = 0;
+        int globalChildrenInt = 0;
+        int globalInfantInt = 0;
         string maindir = FileSystem.Current.AppDataDirectory;
         public ObservableCollection<BookingFlight> bookingCollection = new ObservableCollection<BookingFlight>();
         public ObservableCollection<BookingFlight> BookingCollections
         {
-            get { return bookingCollection; }
+            get
+            {
+                return bookingCollection;
+            }
             set
             {
                 bookingCollection = value;
                 OnPropertyChanged();
             }
         }
-        public ObservableCollection<GuestDetails> guestDetailsCollection = new ObservableCollection<GuestDetails>();
-        public ObservableCollection<GuestDetails> GuestDetailsCollections
+        public ObservableCollection<GuestDetailModel> guestDetailsCollection = new ObservableCollection<GuestDetailModel>();
+        public ObservableCollection<GuestDetailModel> GuestDetailsCollections
         {
-            get { return guestDetailsCollection; }
-            set
+            get
             {
-                guestDetailsCollection = value;
-                OnPropertyChanged();
+                return guestDetailsCollection;
             }
-        }
-        
-        public ObservableCollection<GuestDetails> guestToBeAddedCollection = new ObservableCollection<GuestDetails>();
-        public ObservableCollection<GuestDetails> GuestToBeAddedCollection
-        {
-            get { return guestDetailsCollection; }
             set
             {
                 guestDetailsCollection = value;
@@ -55,7 +49,19 @@ namespace SK_Airlines_App.ViewModels
             }
         }
 
-
+        public ObservableCollection<GuestDetailModel> guestToBeAddedCollection = new ObservableCollection<GuestDetailModel>();
+        public ObservableCollection<GuestDetailModel> GuestToBeAddedCollection
+        {
+            get
+            {
+                return guestToBeAddedCollection;
+            }
+            set
+            {
+                guestToBeAddedCollection = value;
+                OnPropertyChanged();
+            }
+        }
 
         private string labelText;
 
@@ -81,7 +87,7 @@ namespace SK_Airlines_App.ViewModels
                 OnPropertyChanged();
             }
         }
-        
+
         public string lastnameEntry;
         public string LastNameEntry
         {
@@ -125,40 +131,50 @@ namespace SK_Airlines_App.ViewModels
             set
             {
                 id = value;
-                ConvertToProductCollection(ID);
                 OnPropertyChanged();
+                Initialize(id);
             }
         }
 
-        public ICommand SubmitButtonCommand { get; }
-        public ICommand ClearAllCommand { get; }
+        public ICommand SubmitButtonCommand
+        {
+            get;
+        }
+        public ICommand ClearAllCommand
+        {
+            get;
+        }
 
         public GuestDetailsPageSubTicketsViewModel()
         {
-            ConvertToProductCollection(ID);
-            BookingFlight lastEntryBookingFlight = BookingCollections.Last();
-            int adultsInt = Int32.Parse(lastEntryBookingFlight.NoAdults);
-            var number = ((adultsInt-adultsInt)+1);
-            LabelText = $"Adult {number}";
-            globalAdultsInt++;
-            int infantsInt = Int32.Parse(lastEntryBookingFlight.NoInfants); 
-            int childrenInt = Int32.Parse(lastEntryBookingFlight.NoChildren);
             SubmitButtonCommand = new Command(SubmitButton);
         }
 
-            
+        public void Initialize(string id)
+        {
+            //ConvertToProductCollection();
+            BookingFlight lastEntryBookingFlight = BookingCollections.Last();
+            int adultsInt = Int32.Parse(lastEntryBookingFlight.NoAdults);
+            var number = ((adultsInt - adultsInt) + 1);
+            LabelText = $"Adult {number}";
+            globalAdultsInt++;
+            int infantsInt = Int32.Parse(lastEntryBookingFlight.NoInfants);
+            int childrenInt = Int32.Parse(lastEntryBookingFlight.NoChildren);
+        }
+
         public void SubmitButton()
         {
+            //ConvertToProductCollection();
             BookingFlight lastEntryBookingFlight = BookingCollections.Last();
             int adultsInt = Int32.Parse(lastEntryBookingFlight.NoAdults);
             int infantsInt = Int32.Parse(lastEntryBookingFlight.NoInfants);
             int childrenInt = Int32.Parse(lastEntryBookingFlight.NoChildren);
             if (globalAdultsInt != adultsInt)
             {
-                GuestDetails GuestDetailsCollections = new GuestDetails(FirstNameEntry, LastNameEntry, DateOfBirthPck,NationalityEntry);
+                GuestDetailModel GuestDetailsCollections = new GuestDetailModel(FirstNameEntry, LastNameEntry, DateOfBirthPck, NationalityEntry);
                 GuestToBeAddedCollection.Add(GuestDetailsCollections);
-                AddToFile(GuestToBeAddedCollection.Last());
-                GuestToBeAddedCollection.Clear();
+                AddToFile(GuestToBeAddedCollection);
+
 
                 FirstNameEntry = string.Empty;
                 LastNameEntry = string.Empty;
@@ -166,12 +182,12 @@ namespace SK_Airlines_App.ViewModels
                 globalAdultsInt++;
                 LabelText = $"Adult {globalAdultsInt}";
             }
-            else if(globalChildrenInt != childrenInt)
+            else if (globalChildrenInt != childrenInt)
             {
-                GuestDetails GuestDetailsCollections = new GuestDetails(FirstNameEntry, LastNameEntry, DateOfBirthPck, NationalityEntry);
+                GuestDetailModel GuestDetailsCollections = new GuestDetailModel(FirstNameEntry, LastNameEntry, DateOfBirthPck, NationalityEntry);
                 GuestToBeAddedCollection.Add(GuestDetailsCollections);
-                AddToFile(GuestToBeAddedCollection.Last());
-                GuestToBeAddedCollection.Clear();
+                AddToFile(GuestToBeAddedCollection);
+
 
                 FirstNameEntry = string.Empty;
                 LastNameEntry = string.Empty;
@@ -180,12 +196,12 @@ namespace SK_Airlines_App.ViewModels
                 LabelText = $"Child {globalChildrenInt}";
 
             }
-            else if(globalInfantInt != infantsInt)
+            else if (globalInfantInt != infantsInt)
             {
-                GuestDetails GuestDetailsCollections = new GuestDetails(FirstNameEntry, LastNameEntry, DateOfBirthPck, NationalityEntry);
+                GuestDetailModel GuestDetailsCollections = new GuestDetailModel(FirstNameEntry, LastNameEntry, DateOfBirthPck, NationalityEntry);
                 GuestToBeAddedCollection.Add(GuestDetailsCollections);
-                AddToFile(GuestToBeAddedCollection.Last());
-                GuestToBeAddedCollection.Clear();
+                AddToFile(GuestToBeAddedCollection);
+
 
                 FirstNameEntry = string.Empty;
                 LastNameEntry = string.Empty;
@@ -196,7 +212,7 @@ namespace SK_Airlines_App.ViewModels
             }
 
         }
-        public void AddToFile(GuestDetails beepbbop)
+        public void AddToFile(ObservableCollection<GuestDetailModel>beepbbop)
         {
             string filePath = Path.Combine(maindir, $"userDataTicketDatabase[{ID}].json");
 
@@ -208,12 +224,14 @@ namespace SK_Airlines_App.ViewModels
 
         public void ConvertToProductCollection(string id)
         {
-            string filePath = Path.Combine(maindir, $"FlightBooking.json");
-            if (File.Exists(filePath))
+             string filePath = Path.Combine(maindir, $"FlightBooking.json");
+            string filePath1 = Path.Combine(maindir, $"userDataTicketDatabase[{id}].json");
+            if (File.Exists(filePath1))
             {
                 string jsonData = File.ReadAllText(filePath);
+                string jsonData1 = File.ReadAllText(filePath1);
                 BookingCollections = JsonSerializer.Deserialize<ObservableCollection<BookingFlight>>(jsonData);
-                GuestToBeAddedCollection = JsonSerializer.Deserialize<ObservableCollection<GuestDetails>>(jsonData);
+                GuestToBeAddedCollection = JsonSerializer.Deserialize<ObservableCollection<GuestDetailModel>>(jsonData1);
                 ID = id;
             }
         }

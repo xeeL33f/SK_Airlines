@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace SK_Airlines_App.Models
 {
-    public class GuestDetails : INotifyPropertyChanged
+    public class GuestDetailModel : INotifyPropertyChanged
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Nationality { get; set; }
 
-        public GuestDetails(string firstName, string lastName, DateTime dateOfBirth, string nationality)
+        public GuestDetailModel(string firstName, string lastName, DateTime dateOfBirth, string nationality)
         {
             FirstName = firstName;
             LastName = lastName;
