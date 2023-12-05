@@ -26,11 +26,62 @@
                 <StackLayout>
                     <Label Text="Placeholder-Placeholder" FontSize="25" FontAttributes="Bold"/>
                     <Label Text="Placeholder Date | Placeholder Time" FontSize="12"/>
-                    
+
+                    <!--**Placeholder list of sorts**-->
+                    <HorizontalStackLayout Margin="10" Spacing="250">
+                        <Label Text="John Doe 1"/>
+                        <Label Text="PHP x,xxx.xx"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="10" Spacing="250">
+                        <Label Text="John Doe 2"/>
+                        <Label Text="PHP x,xxx.xx"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="10" Spacing="250">
+                        <Label Text="John Doe 3"/>
+                        <Label Text="PHP x,xxx.xx"/>
+                    </HorizontalStackLayout>
+
+                    <!--**CollectionView dynamic list**-->
+                    <!--<CollectionView ItemsSource="{Binding ProductCollection}">
+                        <CollectionView.Header>
+                            <Grid ColumnDefinitions="*,*">
+                                <Label Text="Passengers" Grid.Column="0"/>
+                                <Label Text="Price" Grid.Column="1"/>
+                            </Grid>
+                        </CollectionView.Header>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout Margin="10" Spacing="250">
+                                    <Label Text="John Doe 1"/>
+                                    <Label Text="PHP x,xxx.xx"/>
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>-->
+                    <!--**CollectionView dynamic list**-->
+
+
+                    <!--**Placeholder Content**-->
+                    <Label Text="Additional Add-ons" FontSize="20" Padding="0,15,0,0" />
+
+                    <HorizontalStackLayout Margin="10" Spacing="230">
+                        <Label Text="In-flight meals"/>
+                        <Label Text="PHP x,xxx.xx"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="10" Spacing="208">
+                        <Label Text="Transport Service"/>
+                        <Label Text="PHP x,xxx.xx"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="100" Padding="0,20,0,0">
+                        <Label Text="Placeholder-Placeholder Subtotal" FontSize="15" />
+                        <Label Text="PHP x,xxx.xx" />
+                    </HorizontalStackLayout>
+
                     
                 </StackLayout>
-                
             </Frame>
+
+            <Button Text="Continue" TextColor="Black" MinimumHeightRequest="50" MinimumWidthRequest="150" HeightRequest="50" WidthRequest="150"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

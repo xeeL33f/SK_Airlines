@@ -4,15 +4,25 @@
              x:Class="SK_Airlines_App.AdminPage"
              Title="AdminPage">
     <StackLayout>
-        <Label Text="Welcome Admin" FontSize="30" Margin="10"/>
+        <Grid ColumnDefinitions="*, *" HorizontalOptions="Start" VerticalOptions="FillAndExpand">
+            <Frame Grid.Column="0" CornerRadius="0"  WidthRequest="300">
+                <StackLayout>
+                    <Label Text="SK Airlines" 
+                           Padding="10"/>
 
-        <StackLayout Margin="30">
-            <Frame CornerRadius="10" WidthRequest="1000" HeightRequest="700" BackgroundColor="White">
+                    <Label Text="Dashboard"
+                           FontSize="20"
+                           Padding="30"/>
 
-                <Label Text="Details" TextColor="Black" FontSize="20"/>
+                    <Label Text="Home" Padding="30,10,25,10"/>
+                    <Label Text="Accounts" Padding="30,10,25,10"/>
+                    <Label Text="Accounts" Padding="30,10,25,10"/>
+                    <Label Text="Facebook" Padding="30,10,25,10"/>
+                </StackLayout>
             </Frame>
-        </StackLayout>
+        </Grid>
+
     </StackLayout>
-    
+     
 
 </ContentPage>
