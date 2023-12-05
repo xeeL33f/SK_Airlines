@@ -17,7 +17,7 @@ namespace SK_Airlines_App.ViewModels
 
     internal class GuestDetailsPageSubTicketsViewModel : INotifyPropertyChanged
     {
-
+        int overallPersonInt = 0; 
         int globalAdultsInt = 0;
         int globalChildrenInt = 0;
         int globalInfantInt = 0;
@@ -156,8 +156,15 @@ namespace SK_Airlines_App.ViewModels
             BookingFlight lastEntryBookingFlight = BookingCollections.Last();
             int adultsInt = Int32.Parse(lastEntryBookingFlight.NoAdults);
             var number = ((adultsInt - adultsInt) + 1);
-            LabelText = $"Adult {number}";
-            globalAdultsInt++;
+            if(globalAdultsInt != adultsInt)
+            {
+                LabelText = $"Adult {number}";
+
+            }
+            else
+            {
+                globalAdultsInt++;
+            }
             int infantsInt = Int32.Parse(lastEntryBookingFlight.NoInfants);
             int childrenInt = Int32.Parse(lastEntryBookingFlight.NoChildren);
         }
@@ -169,8 +176,16 @@ namespace SK_Airlines_App.ViewModels
             int adultsInt = Int32.Parse(lastEntryBookingFlight.NoAdults);
             int infantsInt = Int32.Parse(lastEntryBookingFlight.NoInfants);
             int childrenInt = Int32.Parse(lastEntryBookingFlight.NoChildren);
+
+            bool adultState = false;
+            bool childState = false;
+            bool infantState = false;
+
+
+
             if (globalAdultsInt != adultsInt)
             {
+                adultState = true;
                 GuestDetailModel GuestDetailsCollections = new GuestDetailModel(FirstNameEntry, LastNameEntry, DateOfBirthPck, NationalityEntry);
                 GuestToBeAddedCollection.Add(GuestDetailsCollections);
                 AddToFile(GuestToBeAddedCollection);
@@ -181,9 +196,11 @@ namespace SK_Airlines_App.ViewModels
                 NationalityEntry = string.Empty;
                 globalAdultsInt++;
                 LabelText = $"Adult {globalAdultsInt}";
+                overallPersonInt++;
             }
-            else if (globalChildrenInt != childrenInt)
+            else if (globalChildrenInt != childrenInt&&adultState==false)
             {
+                childState = true;
                 GuestDetailModel GuestDetailsCollections = new GuestDetailModel(FirstNameEntry, LastNameEntry, DateOfBirthPck, NationalityEntry);
                 GuestToBeAddedCollection.Add(GuestDetailsCollections);
                 AddToFile(GuestToBeAddedCollection);
@@ -194,10 +211,12 @@ namespace SK_Airlines_App.ViewModels
                 NationalityEntry = string.Empty;
                 globalChildrenInt++;
                 LabelText = $"Child {globalChildrenInt}";
+                overallPersonInt++;
 
             }
-            else if (globalInfantInt != infantsInt)
+            else if (globalInfantInt != infantsInt&&childState==false)
             {
+                infantState = true;
                 GuestDetailModel GuestDetailsCollections = new GuestDetailModel(FirstNameEntry, LastNameEntry, DateOfBirthPck, NationalityEntry);
                 GuestToBeAddedCollection.Add(GuestDetailsCollections);
                 AddToFile(GuestToBeAddedCollection);
@@ -208,10 +227,24 @@ namespace SK_Airlines_App.ViewModels
                 NationalityEntry = string.Empty;
                 globalInfantInt++;
                 LabelText = $"Infant {globalInfantInt}";
+                overallPersonInt++;
 
             }
 
+            if(overallPersonInt == (adultsInt + childrenInt + infantsInt))
+            {
+                GoNextPage();
+            }
+
         }
+
+
+        public async void GoNextPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(AddonsPage)}?id={ID}");
+
+        }
+
         public void AddToFile(ObservableCollection<GuestDetailModel>beepbbop)
         {
             string filePath = Path.Combine(maindir, $"userDataTicketDatabase[{ID}].json");

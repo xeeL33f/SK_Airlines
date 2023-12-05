@@ -1,35 +1,71 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SK_Airlines_App.Views.BookingSummaryPage"
-             Title="BookingSummaryPage">
+<ContentPage
+    x:Class="SK_Airlines_App.Views.BookingSummaryPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:SK_Airlines_App.Models"
+    xmlns:vm="clr-namespace:SK_Airlines_App.ViewModels"
+    Title="BookingSummaryPage"
+    x:DataType="vm:BookingSummaryViewModel">
 
 
     <ScrollView>
         <StackLayout>
             <HorizontalStackLayout>
-                <Label Text="Placeholder-Placeholder" FontSize="20" Padding="10"/>
-                <Label Text="Book Flight" FontSize="20" Padding="80,10,0,0"/>
-                <Label Text="Guest Details" FontSize="20" Padding="40,10,0,0"/>
-                <Label Text="Add-ons" FontSize="20" Padding="40,10,0,0" />
-                <Label Text="Payment" FontSize="20" Padding="40,10,0,0" FontAttributes="Bold" TextColor="#149bcc"/>
-                <Label Text="Confirmation" FontSize="20" Padding="40,10,0,0"/>
+                <Label
+                    Padding="10"
+                    FontSize="20"
+                    Text="{Binding PlaceHolder}" />
+                <Label
+                    Padding="80,10,0,0"
+                    FontSize="20"
+                    Text="Book Flight" />
+                <Label
+                    Padding="40,10,0,0"
+                    FontSize="20"
+                    Text="Guest Details" />
+                <Label
+                    Padding="40,10,0,0"
+                    FontSize="20"
+                    Text="Add-ons" />
+                <Label
+                    Padding="40,10,0,0"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    Text="Payment"
+                    TextColor="#149bcc" />
+                <Label
+                    Padding="40,10,0,0"
+                    FontSize="20"
+                    Text="Confirmation" />
             </HorizontalStackLayout>
-            <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
-                <BoxView HeightRequest="6" BackgroundColor="Black" HorizontalOptions="FillAndExpand" />
+            <StackLayout Padding="0,5,0,0" Orientation="Horizontal">
+                <BoxView
+                    BackgroundColor="Black"
+                    HeightRequest="6"
+                    HorizontalOptions="FillAndExpand" />
             </StackLayout>
 
-            <Label Text="Booking Summary" FontSize="30" Padding="8,8,8,0"/>
-            <Label Text="Review your booking before proceeding to payment" Padding="8,0,0,0" />
+            <Label
+                Padding="8,8,8,0"
+                FontSize="30"
+                Text="Booking Summary" />
+            <Label Padding="8,0,0,0" Text="Review your booking before proceeding to payment" />
 
-            <Frame WidthRequest="500" HeightRequest="600" Margin="15">
+            <Frame
+                Margin="15"
+                HeightRequest="600"
+                WidthRequest="500">
                 <StackLayout>
-                    <Label Text="Placeholder-Placeholder" FontSize="25" FontAttributes="Bold"/>
-                    <Label Text="Placeholder Date | Placeholder Time" FontSize="12"/>
-                    
-                    
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="25"
+                        Text="Placeholder-Placeholder" />
+                    <Label FontSize="12" Text="Placeholder Date | Placeholder Time" />
+
+
                 </StackLayout>
-                
+
             </Frame>
         </StackLayout>
     </ScrollView>

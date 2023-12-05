@@ -3,7 +3,6 @@
     x:Class="SK_Airlines_App.Views.TestBookingSummary"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SK_Airlines_app;assembly=SK_Airlines_app"
     xmlns:vm="clr-namespace:SK_Airlines_App.ViewModels"
     Title="TestBookingSummary"
     x:DataType="vm:TestBookingSummaryViewModelPage">

@@ -10,6 +10,8 @@ namespace SK_Airlines_App
             Routing.RegisterRoute(nameof(FlightBookingSelection), typeof(FlightBookingSelection));
             Routing.RegisterRoute(nameof(TestBookingSummary), typeof(TestBookingSummary));
             Routing.RegisterRoute(nameof(GuestDetailsPageSubTickets), typeof(GuestDetailsPageSubTickets));
+            Routing.RegisterRoute(nameof(AddonsPage), typeof(AddonsPage));
+            Routing.RegisterRoute(nameof(BookingSummaryPage), typeof(BookingSummaryPage));
         }
     }
 }
