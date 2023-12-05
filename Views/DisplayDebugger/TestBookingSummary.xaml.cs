@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace SK_Airlines_App.Views;
 
-
+[QueryProperty(nameof(ID), "id")]
 public partial class TestBookingSummary : ContentPage
 {
     TestBookingSummaryViewModelPage testBookingSummaryViewModelPage = new TestBookingSummaryViewModelPage();
@@ -19,11 +19,21 @@ public partial class TestBookingSummary : ContentPage
         }
     }
 
+    public string id;
+    public string ID
+    {
+        get => id;
+        set
+        {
+            id = value;
+            OnPropertyChanged();
+        }
+    }
+
     public TestBookingSummary()
 	{
 		InitializeComponent();
         BindingContext = testBookingSummaryViewModelPage;
-
     }
 
 

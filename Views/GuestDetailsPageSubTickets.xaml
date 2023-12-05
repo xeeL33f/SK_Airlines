@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="SK_Airlines_App.Views.GuestDetailsPage"
+    x:Class="SK_Airlines_App.Views.GuestDetailsPageSubTickets"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:model="clr-namespace:SK_Airlines_App.Models"
     xmlns:vm="clr-namespace:SK_Airlines_App.ViewModels"
-    Title="GuestDetailsPage"
-    x:DataType="vm:GuestDetailsPageViewModel">
+    Title="GuestDetailsPageSubTickets"
+    x:DataType="vm:GuestDetailsPageSubTicketsViewModel">
 
-    <ContentPage.BindingContext>
-        <vm:GuestDetailsPageViewModel />
-    </ContentPage.BindingContext>
+
 
     <StackLayout>
         <HorizontalStackLayout>
@@ -59,6 +57,7 @@
             HorizontalOptions="Center"
             VerticalOptions="Center"
             WidthRequest="850">
+
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -79,7 +78,7 @@
                     FontAttributes="Bold"
                     FontSize="30"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Contact Information"
+                    Text="{Binding LabelText}"
                     TextColor="Black"
                     VerticalOptions="CenterAndExpand" />
 
@@ -139,22 +138,23 @@
                 <Label
                     Grid.Row="2"
                     Grid.Column="0"
-                    Padding="0,0,120,60"
+                    Padding="0,0,160,60"
                     FontAttributes="Bold"
                     FontSize="20"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Contact Number"
+                    Text="Date of Birth"
                     TextColor="Black"
                     VerticalOptions="Center" />
 
-                <Entry
-                    x:Name="contactNumberEntry"
+                <DatePicker
+                    x:Name="dateOfBirth"
                     Grid.Row="2"
                     Grid.Column="0"
+                    Margin="0,20,0,0"
+                    Date="{Binding DateOfBirthPck}"
                     FontSize="18"
                     HorizontalOptions="CenterAndExpand"
                     MinimumWidthRequest="300"
-                    Placeholder="Number"
                     TextColor="Black"
                     VerticalOptions="CenterAndExpand" />
 
@@ -162,22 +162,23 @@
                 <Label
                     Grid.Row="2"
                     Grid.Column="1"
-                    Padding="0,0,230,60"
+                    Padding="0,0,170,60"
                     FontAttributes="Bold"
                     FontSize="20"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Email"
+                    Text="Nationality"
                     TextColor="Black"
                     VerticalOptions="Center" />
 
                 <Entry
-                    x:Name="emailEntry"
+                    x:Name="nationalityEntry"
                     Grid.Row="2"
                     Grid.Column="1"
                     FontSize="18"
                     HorizontalOptions="CenterAndExpand"
                     MinimumWidthRequest="300"
-                    Placeholder="sample@gmail.com"
+                    Placeholder="ex. Filipino"
+                    Text="{Binding NationalityEntry}"
                     TextColor="Black"
                     VerticalOptions="CenterAndExpand" />
 
@@ -187,7 +188,7 @@
                     Grid.Column="1"
                     BackgroundColor="#0c3242"
                     BorderWidth="25"
-                    Command="{Binding ContinueClickedButton}"
+                    Command="{Binding SubmitButtonCommand}"
                     HorizontalOptions="End"
                     Text="Continue"
                     TextColor="White"
@@ -196,7 +197,8 @@
 
             </Grid>
         </Frame>
-
     </StackLayout>
+
+
 
 </ContentPage>
